@@ -1,0 +1,319 @@
+*{
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+    font-family: sans-serif;
+    color: #000;
+}
+
+:root {
+    --padding-sections: 3em;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 500px 60px 1fr 80px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.parallax{
+    height: 100%;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    background-image: url(Multimedia/fondo-mancha-acuarela-color-pastel_52683-12281.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+
+}
+
+.title{
+    width: 100%;
+    font-size: 30px;
+    margin: 20px;
+    text-align: center;
+}
+
+h1{
+    font-family: 'Anton', sans-serif;
+}
+
+.welcome{
+    display: block;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    
+}
+
+.portfolio{
+    color: #76D3BE;
+    font-family: 'Anton', sans-serif;
+}
+
+.parallax__button{
+    background-color: transparent;
+    border: 1px solid #000;
+    width: 10em;
+    height: 3em;
+    transition: background 1s;
+    margin: 40px;
+
+}
+
+.softwares{
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    font-size: 19px;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.softwares ul{
+    list-style: none;
+    animation: change-softwares 7s infinite;
+    padding: 0 5px;
+}
+
+.softwares ul, p{
+    margin: 0;
+}
+
+.arrow-down{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    display: block;
+    animation: bounce-fade 1.2s infinite;
+}
+
+.arrow-down img{
+    object-fit: cover;
+}
+
+@keyframes change-softwares {
+    0% {margin-top: 0}
+    20% {margin-top: 0;}
+
+    25% {margin-top: -40px}
+    50% {margin-top: -40px}
+
+    55% {margin-top: -80px}
+    80% {margin-top: -80px}
+
+    85% {margin-top: -40px}
+    95% {margin-top: -40px}
+
+    100% {margin-top: 0}
+}
+
+@keyframes bounce-fade {
+    0%{
+        opacity: 0;
+        bottom: 35px;
+    }
+
+    100%{
+        opacity: 1;
+        bottom: 2px;
+    }
+}
+
+.parallax__button:focus{
+    background: #76D3BE
+}
+
+.content__header{
+    grid-row: 2/3;
+    grid-column: 1/3;
+    background: #fff;
+    position: sticky;
+    top: 0;
+}
+
+.header__nav{
+    display: flex;
+    flex-basis: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.nav__responsive-ul i{
+    height: 100%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.logo-benjamin{
+    font-size: 11px;
+    text-align: center;
+}
+
+.logo-tassara{
+    font-size: 22px;
+}
+
+.nav__logo{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+
+}
+
+.nav__ul{
+    display: flex;
+    background-color: #76D3BE;
+    flex-direction: column;
+    align-items: center;
+    height: 0;
+    overflow: hidden;
+    transition: all .5s;
+    justify-content: space-evenly;
+}
+
+.mostrar{
+    height: 26em;
+}
+
+.nav__li {
+    list-style: none;
+    padding: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #888;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__li i{
+    margin: 5px;
+    text-decoration: none;
+}
+
+.nav__li a{
+    margin: 5px;
+    text-decoration: none;
+}
+
+.content__main{
+    width: 100%;
+    height: 100%;
+    grid-row: 3/4;
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__aboutme{
+    width: 100%;
+    background-color: #262626;
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-sections);
+}
+
+.main__aboutme p{
+    text-align: center;
+    color: #F4F1F2;
+}
+
+.headings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.headings h2{
+    font-size: 40px;
+    font-family: 'Anton', sans-serif;
+}
+
+#aboutme__headings h2{
+    color: #F4F1F2;
+}
+
+.line{
+    height: 1px;
+    width: 150px;
+    margin: 30px 0;
+}
+
+#abt-line{
+    background-color: #F4F1F2;
+}
+
+.main__portfolio{
+    padding: var(--padding-sections);
+}
+
+#port-line{
+    background-color: #000;
+}
+
+.main__experience{
+    width: 100%;
+    padding: var(--padding-sections);
+    background-color: #F4F1F2;
+}
+
+#xp-line{
+    background-color: #000;
+}
+
+.main__contactme{
+    width: 100%;
+    padding: var(--padding-sections);
+    background-color: #262626;
+}
+
+#cm__headings h2{
+    color: #F4F1F2;
+}
+
+#cm-line{
+    background-color: #F4F1F2;
+}
+
+.content__footer{
+    grid-row: 4/5;
+    grid-column: 1/3;
+    background: #262626;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#ft-line{
+    margin: 0 auto;
+    background-color: #F4F1F2;
+    width: 80%;
+}
+
+@media screen and (min-width: 900px){
+    .content{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 600px 60px 1fr 80px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .title{
+        font-size: 35px;
+        margin: 40px;
+    }
+}
