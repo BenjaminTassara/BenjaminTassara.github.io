@@ -1,10 +1,15 @@
-const btnMenu = document.querySelector(".nav__responsive-ul");
-
+const btnMenu = document.querySelector(".button__ul");
 const menu = document.querySelector(".nav__ul");
+const menuItem = document.querySelectorAll(".nav__li");
+
 
 btnMenu.addEventListener("click", () => {
     menu.classList.toggle("mostrar");
-    const menus = this.nextElementSibling;
-    const height = menus.scrollHeight;
-    menus.style.height = height + "px";
-})
+});
+
+
+for(let i = 0; i < menuItem.length; i++){
+    menuItem[i].addEventListener("click", () => {
+        menu.classList.toggle("mostrar");
+    });
+}
