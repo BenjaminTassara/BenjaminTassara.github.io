@@ -5,7 +5,7 @@
 }
 
 :root {
-    --padding-sections: 4em;
+    --padding-sections: 4em 1em;
 }
 
 html {
@@ -322,10 +322,55 @@ h1{
     width: 100%;
     padding: var(--padding-sections);
     background-color: #F4F1F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
 #xp-line{
     background-color: #000;
+}
+
+.experience__container{
+    margin: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card-item{
+    margin: 30px;
+    padding: 5px;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid #000;
+    text-align: center;
+}
+
+.card-heading{
+    text-align: center;
+}
+
+.card-heading p{
+    text-align: center;
+    margin: 10px;
+}
+
+.experience-items{
+    font-size: 30px;
+}
+
+.experience-items i{
+    margin: 10px;
 }
 
 .main__contactme{
@@ -338,8 +383,58 @@ h1{
     color: #F4F1F2;
 }
 
+#cm__headings p{
+    color: #F4F1F2;
+    text-align: center;
+}
+
 #cm-line{
     background-color: #F4F1F2;
+}
+
+.form-container{
+    background-color: #F4F1F2;
+    border-radius: .2em;
+    padding: 8px;
+    margin: 20px auto;
+}
+
+.contactme__form{
+    margin: 20px;
+}
+
+.form__input{
+    width: 100%;
+    margin: 8px auto;
+    padding: 12px 15px;
+    color: #000;
+    border-radius: .2em;
+    border: none;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+}
+
+.form__input:focus {
+    background: #0a132c15;
+}
+
+.form__section textarea {
+    height: 300px;
+    resize: none;
+}
+
+.form__send{
+    background-color: #76D3BE;
+    border: none;
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+}
+
+.form__send:active{
+    background-color: #268b74;
 }
 
 .content__footer{
@@ -414,6 +509,12 @@ h1{
     .nav__li-responsive a{
         text-decoration: none;
     }
+
+    .experience__container{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
 }
 
 @media screen and (max-width: 315px){
