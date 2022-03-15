@@ -13,4 +13,3 @@ for(let i = 0; i < menuItem.length; i++){
         menu.classList.toggle("mostrar");
     });
 }
-//Coment
