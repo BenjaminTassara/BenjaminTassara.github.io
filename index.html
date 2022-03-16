@@ -17,18 +17,24 @@
 <body>
     <div class="content">
         <div class="parallax">
-            <div class="title">
-                <h1><span class="welcome">WELCOME TO</span> MY <span class="portfolio">PORTFOLIO</span></h1>
+            <div class="parallax-headings">
+                <div class="title">
+                    <h1><span class="welcome">WELCOME TO</span>MY <span class="portfolio">PORTFOLIO</span></h1>
+                </div>
+                <div class="softwares">
+                    <p>I love editing with</p>
+                    <ul>
+                        <li>Potoshop</li>
+                        <li>After Effects</li>
+                        <li>Premiere</li>
+                    </ul>
+                </div>
+            </div>            
+            
+            <div class="button-container">
+                <a href="#aboutme"><i class="fas fa-play"></i></a>
+                <a class="parallax__button" href="#aboutme">READ MORE</a>
             </div>
-            <div class="softwares">
-                <p>I love editing with</p>
-                <ul>
-                    <li>Potoshop</li>
-                    <li>After Effects</li>
-                    <li>Premiere</li>
-                </ul>
-            </div>
-            <a class="parallax__button" href="#aboutme">Read More</a>
             <div class ="arrow-down">
                 <img src="Multimedia/Arrow Down.png">
             </div>
@@ -37,8 +43,7 @@
         <header class="content__header">
             <nav class="header__nav">
                 <div class="nav__logo">
-                    <a class="logo-benjamin">Benjamín</a>
-                    <a class="logo-tassara">Tassara</a>
+                    <a class="logo-tassara">Benjamín Video Editing</a>
                 </div>
 
                 <div class="button__ul">
@@ -155,19 +160,12 @@
                     <p>For any proposal or query send me a message and I'll answer as quickly as possible.</p> 
                 </div>
                 <div class="form-container">
-                    <form class="contactme__form" id="form" action="https://formsubmit.co/juanigm99@gmail.com" method="POST" target="_BLANK">
-                        <div class="form__section">
-                            <input type="text" class="form__input" placeholder="NAME" name="name" required="">
-                        </div>
-                        <div class="form__section">
-                            <input type="email" class="form__input" placeholder="E-MAIL" name="email" required="">
-                        </div>
-                        <div class="form__section">
-                            <textarea class="form__input" placeholder="MESSAGE" name="msg" required=""></textarea>
-                        </div>
-                        <div class="form__section">
-                            <input class="form__send" type="submit" name="send" value="SEND">
-                        </div>
+                    <form class="contactme__form" id="form" autocomplete="off">
+                        <input type="text" class="form__input" placeholder="NAME" name="name" required="" id="name">
+                        <input type="email" class="form__input" placeholder="E-MAIL" name="email" required="" id="email">
+                        <textarea class="form__input" placeholder="MESSAGE" name="msg" required="" id="message"></textarea>
+                        <input class="form__send" type="submit" name="send" value="SEND" id="btn-send">
+                        <div class="result" id="result"></div>
                     </form>
                 </div>
             </div>
@@ -189,7 +187,9 @@
             </div>
         </footer>
     </div>
-    <script src="app.js"></script>
-    <script src="observer.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/observer.js"></script>
+    <script src="scripts/form.js"></script>
+    <script src="scripts/scrollNav.js"></script>
 </body>
 </html>

@@ -6,6 +6,9 @@
 
 :root {
     --padding-sections: 4em 1em;
+    --color-dominated: #262626;
+    --color-secondary: #94f0dc;
+    --main-font: 'Anton', sans-serif;
 }
 
 html {
@@ -16,19 +19,19 @@ html {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 500px 60px 1fr 100px;
+    grid-template-rows:  0px 100vh 1fr 100px;
     grid-template-columns: 1fr 1fr;
 }
 
 .parallax{
     height: 100%;
     grid-column: 1/3;
-    grid-row: 1/2;
-    background-image: url(Multimedia/fondo-mancha-acuarela-color-pastel_52683-12281.jpg);
+    grid-row: 2/3;
+    background-image: url(Multimedia/BG\ Photo.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
+    background-position: right;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,53 +40,47 @@ html {
 
 }
 
+.parallax-headings{
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .title{
     width: 100%;
     font-size: 30px;
-    margin: 20px;
     text-align: center;
 }
 
 h1{
     font-family: 'Anton', sans-serif;
+    letter-spacing: 2px;
+    color: #F4F1F2;
+    margin: 10px;
 }
 
 .welcome{
+    height: 60px;
     display: block;
     text-align: center;
     font-family: 'Anton', sans-serif;
-    
+    letter-spacing: 2px;
+    color: #F4F1F2;
 }
 
 .portfolio{
-    color: #76D3BE;
-    font-family: 'Anton', sans-serif;
-}
-
-.parallax__button{
-    background-color: transparent;
-    border: 1px solid #000;
-    width: 10em;
-    height: 3em;
-    transition: background 1s;
-    margin: 40px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.parallax__button:active{
-    background: #76D3BE
+    color: var(--color-secondary);
+    font-family: var(--main-font);
+    letter-spacing: 2px;
 }
 
 .softwares{
     display: flex;
     height: 40px;
     line-height: 40px;
-    font-size: 19px;
+    font-size: 22px;
     opacity: 1;
     overflow: hidden;
 }
@@ -91,11 +88,51 @@ h1{
 .softwares ul{
     list-style: none;
     animation: change-softwares 7s infinite;
-    padding: 0 5px;
+    padding: 0 8px;
+}
+
+.softwares li{
+    color: #F4F1F2;
 }
 
 .softwares ul, p{
     margin: 0;
+    color: #F4F1F2;
+}
+
+.fa-play{
+    font-size: 25px;
+    text-align: center;
+    padding: 14px 30px;
+    color: #F4F1F2;
+    background-color: #000;
+    margin: 10px;
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.parallax__button{
+    background-color: var(--color-secondary);
+    font-size: 25px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-family: var(--main-font);
+}
+
+.parallax__button:active{
+    background: var(--color-secondary)
 }
 
 .arrow-down{
@@ -143,12 +180,21 @@ h1{
 }
 
 .content__header{
-    grid-row: 2/3;
+    grid-row: 1/2;
     grid-column: 1/3;
-    background: #fff;
-    position: sticky;
+    background: var(--color-dominated);
+    position: fixed;
     top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
     z-index: 200;
+    background-color: transparent;
+    transition: background .5s;
+}
+
+.content__header.background{
+    background-color: var(--color-dominated);
 }
 
 .header__nav{
@@ -158,13 +204,14 @@ h1{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
+    padding: 0 15px;
 }
 
 .button__ul i{
     height: 100%;
     font-size: 20px;
     cursor: pointer;
+    color: #F4F1F2;
 }
 
 .logo-benjamin{
@@ -173,7 +220,8 @@ h1{
 }
 
 .logo-tassara{
-    font-size: 22px;
+    font-size: 18px;
+    color: #F4F1F2;
 }
 
 .nav__logo{
@@ -382,6 +430,10 @@ h1{
     transform: scale(1);
 }
 
+.card-item p{
+    color: #000;
+}
+
 .card-heading{
     text-align: center;
 }
@@ -389,6 +441,7 @@ h1{
 .card-heading p{
     text-align: center;
     margin: 10px;
+    color: #000;
 }
 
 .experience-items{
@@ -442,14 +495,15 @@ h1{
     border: 1px solid #262626;
     font-family: 'Anton', sans-serif;
     letter-spacing: 1px;
+    outline: none;
 }
 
 .form__input:focus {
     background: #0a132c15;
 }
 
-.form__section textarea {
-    height: 300px;
+#message{
+    height: 200px;
     resize: none;
 }
 
@@ -465,6 +519,18 @@ h1{
 
 .form__send:active{
     background-color: #268b74;
+}
+
+.result{
+    margin: 5px 0;
+}
+
+.green{
+    color: #9c6;
+}
+
+.red{
+    color:#FF0000;
 }
 
 .content__footer{
@@ -512,13 +578,47 @@ h1{
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-rows: 600px 60px 1fr 80px;
+        grid-template-rows:  0px 100vh 1fr 80px;
         grid-template-columns: 1fr 1fr;
     }
 
     .title{
-        font-size: 35px;
-        margin: 40px;
+        font-size: 90px;
+        margin: 20px;
+    }
+
+    h1{
+        letter-spacing: 5px;
+        margin: 0;
+    }
+    
+    .welcome{
+        height: 180px;
+        letter-spacing: 5px;     
+    }
+    
+    .portfolio{
+        letter-spacing: 5px;
+    }
+
+    .parallax{
+        justify-content: space-around;
+    }
+
+    .parallax-headings{
+        height: 500px;
+    }
+
+    .softwares{
+        font-size: 38px;
+    }
+
+    .parallax__button{
+        font-size: 60px;
+    }
+
+    .fa-play{
+        font-size: 60px;
     }
 
     .logo-benjamin {
@@ -559,10 +659,12 @@ h1{
     .nav__li-responsive i{
         font-size: 20px;
         margin: 0 5px;
+        color: #F4F1F2;
      }
 
     .nav__li-responsive a{
         text-decoration: none;
+        color: #F4F1F2;
     }
 
     .experience__container{
@@ -602,8 +704,9 @@ h1{
         outline: none;
     }
     
-    .form__section textarea {
+    .form-container textarea {
         height: 470px;
+        resize: none;
     }
     
     .form__send{
