@@ -190,11 +190,12 @@ h1{
     width: 100%;
     z-index: 200;
     background-color: transparent;
-    transition: background .5s;
+    transition: all .5s;
 }
 
 .content__header.background{
     background-color: var(--color-dominated);
+    height: 65px;
 }
 
 .header__nav{
