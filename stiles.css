@@ -5,14 +5,22 @@
 }
 
 :root {
-    --padding-sections: 4em 1em;
+    --padding-sections: 4em 2em;
+    --paddng-sections-responsive: 5em;
     --color-dominated: #262626;
     --color-secondary: #94f0dc;
     --main-font: 'Anton', sans-serif;
+    --color-hover-nav-menu: #838383;
+    --scroll-space: 74px;
+    --desktop-font-header-sections: 80px
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+p{
+    color: #F4F1F2;
 }
 
 .content{
@@ -41,7 +49,7 @@ html {
 }
 
 .parallax-headings{
-    height: 320px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +66,8 @@ h1{
     font-family: 'Anton', sans-serif;
     letter-spacing: 2px;
     color: #F4F1F2;
-    margin: 8px;
+    margin: inherit;
+    margin: 30px 0px;
 }
 
 .welcome{
@@ -80,36 +89,43 @@ h1{
     display: flex;
     height: 40px;
     line-height: 40px;
-    font-size: 5vw;
     opacity: 1;
     overflow: hidden;
+    font-weight: 600;
+    margin-bottom: 100px;
 }
 
 .softwares ul{
     list-style: none;
     animation: change-softwares 7s infinite;
-    padding: 0 8px;
+    padding: 0 10px;
+    font-size: 5vw;
+}
+
+.softwares p{
+    font-size: 5vw;
 }
 
 .softwares li{
     color: #F4F1F2;
 }
 
-.softwares ul, p{
+.softwares ul{
     margin: 0;
     color: #F4F1F2;
 }
 
 .fa-play{
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
     padding: 14px 30px;
     color: #F4F1F2;
     background-color: #000;
-    margin: 10px;
 }
 
 .button-container{
+    position: absolute;
+    top: 83%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,9 +134,8 @@ h1{
 
 .parallax__button{
     background-color: var(--color-secondary);
-    font-size: 25px;
-    padding: 10px 20px;
-    margin: 10px;
+    font-size: 30px;
+    padding: 14px 20px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -195,7 +210,7 @@ h1{
 
 .content__header.background{
     background-color: var(--color-dominated);
-    height: 65px;
+    height: 75px;
 }
 
 .header__nav{
@@ -205,12 +220,12 @@ h1{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 15px;
+    padding: 0 2em;
 }
 
 .button__ul i{
     height: 100%;
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
     color: #F4F1F2;
 }
@@ -221,8 +236,10 @@ h1{
 }
 
 .logo-tassara{
-    font-size: 18px;
     color: #F4F1F2;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
 }
 
 .nav__logo{
@@ -245,6 +262,8 @@ h1{
     overflow: hidden;
     transition: all .5s ease;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .fa-times{
@@ -252,10 +271,15 @@ h1{
     height: 30px;
     width: 30px;
     text-align: center;
-    position: absolute;
-    left: 90%;
-    margin: 10px 0;
+    margin-left: auto;
     color: #F4F1F2;
+    padding-right: 40px;
+    padding-top: 10px;
+    transition: color .4s;
+}
+
+.fa-times:hover{
+    color: var(--color-hover-nav-menu);
 }
 
 .mostrar{
@@ -263,7 +287,7 @@ h1{
 }
 
 .nav__items{
-    display: flex;
+    display:flex;
     flex-direction: column;
     margin: 40px;
 }
@@ -276,6 +300,7 @@ h1{
     display: flex;
     text-align: center;
     align-items: center;
+    margin:10px;
 }
 
 /*.nav__li i{
@@ -286,11 +311,15 @@ h1{
 }*/
 
 .nav__li a{
-    padding: 10px 0;
     text-decoration: none;
     color: #F4F1F2;
     font-family: var(--main-font);
-    font-size: 30px;
+    font-size: 40px;
+    transition: color .4s;
+}
+
+.nav__li a:hover{
+    color: var(--color-hover-nav-menu);
 }
 
 .content__main{
@@ -311,10 +340,10 @@ h1{
     flex-direction: column;
     align-items: center;
     padding: var(--padding-sections);
+    scroll-margin-top: var(--scroll-space);
 }
 
 .main__aboutme p{
-    text-align: center;
     color: #F4F1F2;
 }
 
@@ -365,6 +394,7 @@ h1{
 .main__portfolio{
     width: 100%;
     padding: var(--padding-sections);
+    scroll-margin-top: var(--scroll-space);
 }
 
 #port-line{
@@ -382,7 +412,7 @@ h1{
 .portfolio__container-video .video-item{
     height: 14rem;
     width: 25rem;
-    margin: .5rem;
+    margin: .5rem 0;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
     overflow: hidden;
     border-radius: 1rem;
@@ -410,7 +440,7 @@ h1{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    scroll-margin-top: var(--scroll-space);
 }
 
 #xp-line{
@@ -480,6 +510,7 @@ h1{
     width: 100%;
     padding: var(--padding-sections);
     background-color: #262626;
+    scroll-margin-top: var(--scroll-space);
 }
 
 #cm__headings h2{
@@ -591,6 +622,8 @@ h1{
 }
 
 @media screen and (min-width: 900px){
+
+
     .content{
         width: 100%;
         height: 100%;
@@ -599,23 +632,36 @@ h1{
         grid-template-columns: 1fr 1fr;
     }
 
+    .content__header.background{
+        height: 90px;
+    }
+
     .title{
         font-size: 90px;
-        margin: 20px;
+
     }
 
     h1{
         letter-spacing: 5px;
-        margin: 0;
+        margin: 50px;
+    }
+
+    .softwares ul, p{
+        font-size: inherit;
     }
     
     .welcome{
         height: 180px;
         letter-spacing: 5px;     
     }
-    
+
+
     .portfolio{
         letter-spacing: 5px;
+    }
+
+    .portfolio__container-video .video-item{
+        margin: .5rem;
     }
 
     .parallax{
@@ -623,11 +669,16 @@ h1{
     }
 
     .parallax-headings{
-        height: 500px;
+        height: 1000px;
     }
 
-    .softwares{
+    .button-container{
+        position: inherit;
+    }
+
+    .softwares, .softwares p{
         font-size: 38px;
+        margin-bottom: 50px;
     }
 
     .parallax__button{
@@ -635,9 +686,8 @@ h1{
     }
 
     .fa-times{
-        padding: inherit;
-        margin: 10px ;
-        left: 27%;
+        margin-right: 70%;
+        cursor: pointer;
     }
 
     .mostrar{
@@ -645,15 +695,21 @@ h1{
     }
 
     .fa-play{
-        font-size: 60px;
+        font-size: 59px;
     }
 
+    /*
     .logo-benjamin {
         font-size: 14px;
-    }
+    }*/
     
     .logo-tassara{
-        font-size: 25px;
+        font-size: 40px;
+    }
+
+    
+    .button__ul i{
+        font-size: 48px;
     }
 
     .aboutme__portrait{
@@ -661,15 +717,11 @@ h1{
         height: 400px;
     }
 
-    .benjamin .tassara{
-        font-size: ¿2px;
+    .headings h2{
+        font-size: var(--desktop-font-header-sections);
     }
-
+    
     /*
-    .button__ul{
-        display: none;
-    }
-
     .nav__ul-responsive{
         display: flex;
         flex-direction: row;
@@ -695,10 +747,7 @@ h1{
         color: #F4F1F2;
     }
 */
-    .experience__container{
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+
 
     .experience__container{
         flex-direction: row;
@@ -708,6 +757,10 @@ h1{
 
     .experience-items i:hover{
         transform: scale(1.3);
+    }
+
+    .card-item{
+        width: 300px;
     }
 
     .form-container{
@@ -768,6 +821,16 @@ h1{
     }
 
     .softwares{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1103px){
+    .title{
+        font-size: 7.5vw;
+    }
+
+    .softwares .softwares p{
         font-size: 20px;
     }
 }
