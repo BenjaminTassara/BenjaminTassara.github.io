@@ -9,9 +9,11 @@ btn.addEventListener('click', (e) => {
     let error = validarCampos();
     if(error[0]){
         result.innerHTML = error[1];
+        result.classList.remove('green');
         result.classList.add('red');
     }else{
         result.innerHTML = "E-mail sent successfully";
+        result.classList.remove('red');
         result.classList.add('green');
     }
 });
@@ -32,6 +34,21 @@ const validarCampos = () => {
         error[0] = true;
         error[1] = 'The name cannot contain more than 20 letters';
         return error;
+    }
+    
+    else if(email.value.includes(' ') || name_.value.includes(' ')){
+        error[0] = true;
+        error[1] = 'The E-mail or Name cannot contain spaces';
+    }
+
+    else if(!email.value.includes('@')){
+        error[0] = true;
+        error[1] = 'Invalid E-mail';
+    }
+
+    else if(!email.value.includes('.')){
+        error[0] = true;
+        error[1] = 'Invalid E-mail';
     }
     return error;
 }
