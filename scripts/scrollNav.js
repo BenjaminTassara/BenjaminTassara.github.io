@@ -9,5 +9,5 @@ const addBackground = () => {
     else nav.classList.remove('background');
 }
 
-window.addEventListener('scroll', addBackground)
+window.addEventListener('scroll', addBackground);
 

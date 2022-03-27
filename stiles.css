@@ -5,13 +5,13 @@
 }
 
 :root {
-    --padding-sections: 4em 2em;
+    --padding-sections: 4em 2em ;
     --paddng-sections-responsive: 5em;
     --color-dominated: #262626;
     --color-secondary: #94f0dc;
     --main-font: 'Anton', sans-serif;
     --color-hover-nav-menu: #838383;
-    --scroll-space: 74px;
+    --scroll-space: 30px;
     --desktop-font-header-sections: 80px
 }
 
@@ -60,6 +60,7 @@ p{
     width: 100%;
     font-size: 8vw;
     text-align: center;
+    line-height: .98;
 }
 
 h1{
@@ -115,17 +116,24 @@ h1{
     color: #F4F1F2;
 }
 
-.fa-play{
+.play{
+    width: 100px;
+    height: 70px;
     font-size: 30px;
     text-align: center;
-    padding: 14px 30px;
-    color: #F4F1F2;
     background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play i{
+    color: #F4F1F2;
 }
 
 .button-container{
     position: absolute;
-    top: 83%;
+    top: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,6 +141,8 @@ h1{
 }
 
 .parallax__button{
+    width: 170px;
+    height: 70px;
     background-color: var(--color-secondary);
     font-size: 30px;
     padding: 14px 20px;
@@ -303,6 +313,7 @@ h1{
     margin:10px;
 }
 
+
 /*.nav__li i{
     margin: 5px;
     text-decoration: none;
@@ -339,52 +350,78 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: var(--padding-sections);
     scroll-margin-top: var(--scroll-space);
+}
+
+.aboutme__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main__aboutme p{
     color: #F4F1F2;
 }
 
-/*
-.aboutme__portrait{
-    border: 1px solid #F4F1F2;
+.aboutme__content-description p {
+    margin: 15px 0 ;
 }
-*/
+
+
+.aboutme__portrait{
+    width: 300px;
+    height: 300px;
+    transform: scale(0.9);
+    transition: .9s ease-in-out all;
+}
+
 .aboutme__portrait img{
     height: 100%;
-
+    width: 100%;
+    border: 10px solid var(--color-secondary);
+    object-fit: contain;
     opacity: 0;
     transform: scale(0.9);
     transition: .9s ease-in-out all;
 }
 
-.aboutme__portrait img.visible{
+.aboutme__portrait.visible, img.visible{
     opacity: 1;
     transform: scale(1);
 }
 
 .headings{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+
+.headings-color{
+    font-size: 40px;
+    font-family: 'Anton', sans-serif;
+    color: var(--color-secondary);
 }
 
 .headings h2{
     font-size: 40px;
     font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
 }
 
-#aboutme__headings h2{
+.aboutme__headings h2{
     color: #F4F1F2;
 }
 
+
 .line{
-    height: 1px;
+    /*height: 1px;*/
     width: 150px;
-    margin: 30px 0;
+    margin: 10px 0;
 }
 
 #abt-line{
@@ -398,7 +435,7 @@ h1{
 }
 
 #port-line{
-    background-color: #000;
+    background-color: var(--color-dominated);
 }
 
 .portfolio__container-video{
@@ -407,6 +444,7 @@ h1{
     justify-content: center;
     flex-wrap: wrap;
     z-index: -1;
+    margin: 15px 0;
 }
 
 .portfolio__container-video .video-item{
@@ -415,10 +453,10 @@ h1{
     margin: .5rem 0;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
     overflow: hidden;
-    border-radius: 1rem;
+    cursor: pointer;
 }
 
-.portfolio__container-video .video-item iframe{
+.portfolio__container-video .video-item img{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -426,7 +464,7 @@ h1{
     border: none;
 }
 
-.portfolio__container-video .video-item iframe:hover{
+.portfolio__container-video .video-item img:hover{
     transition: .2s linear;
     transform: scale(1.1);
     
@@ -448,7 +486,6 @@ h1{
 }
 
 .experience__container{
-    margin: 20px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -597,6 +634,8 @@ h1{
 }
 
 #ft-line{
+    height: 1px;
+    width: 150px;
     margin: 0 auto;
     background-color: #F4F1F2;
     width: 80%;
@@ -621,6 +660,70 @@ h1{
     margin: 5px;
 }
 
+.modal-bg{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-200%);
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5000;
+    transform: translateY(-200%);
+    transition: all .5s;
+}
+
+.modal__content{
+    width: 96vw;
+    height: 80vw;
+    max-width: 600px;
+    max-height: 400px;
+    padding: 10px;
+    background-color: #F4F1F2;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+}
+
+.video-item-a iframe{
+    width: 90vw;
+    height: 50vw;
+    max-width: 550px;
+    max-height: 300px;
+}
+
+.modal__content p{
+    color: var(--color-dominated);
+}
+
+.btn-close{
+    display: flex;
+}
+
+.btn-close i{
+    color: #262626;
+    font-size: 20px;
+    padding: inherit;
+}
+
+.modal-open{
+    transform: translateY(0);
+}
+
 @media screen and (min-width: 900px){
 
 
@@ -630,6 +733,11 @@ h1{
         display: grid;
         grid-template-rows:  0px 100vh 1fr 80px;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .content__header{
+        padding: inherit;
+        padding: 0 4em;
     }
 
     .content__header.background{
@@ -682,7 +790,14 @@ h1{
     }
 
     .parallax__button{
+        width: 300px;
+        height: 90px;
         font-size: 60px;
+    }
+
+    .play{
+        width: 130px;
+        height: 90px;
     }
 
     .fa-times{
@@ -707,14 +822,48 @@ h1{
         font-size: 40px;
     }
 
-    
+
     .button__ul i{
         font-size: 48px;
     }
 
-    .aboutme__portrait{
-        width: 400px;
-        height: 400px;
+    .main__aboutme{
+        padding: inherit;
+        padding: var(--paddng-sections-responsive);
+    }
+
+    .aboutme__content{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: unset;
+        gap: 20px;
+    }
+
+    .aboutme__content-description{
+        flex-grow: 1;
+        width: 300px;
+        font-size: 18px;
+    }
+    
+    .aboutme__content-description p{
+        margin: 10px 0;
+        width: 100%;
+        font-size: 27px;
+    }
+
+
+    .aboutme__portrait{ 
+        height: 500px;
+        width: 500px;
+    }
+
+    .aboutme__portrait img{
+        object-fit: cover;
+    }
+
+    .headings-color{
+        font-size: var(--desktop-font-header-sections);
     }
 
     .headings h2{
@@ -748,6 +897,15 @@ h1{
     }
 */
 
+    .main__portfolio{
+        padding: inherit;
+        padding: var(--paddng-sections-responsive);
+    }
+
+    .main__experience{
+        padding: inherit;
+        padding: var(--paddng-sections-responsive);
+    }
 
     .experience__container{
         flex-direction: row;
@@ -763,17 +921,26 @@ h1{
         width: 300px;
     }
 
+    .main__contactme{
+        padding: inherit;
+        padding: var(--paddng-sections-responsive);
+    }
+    
+    .contactme__form{
+        margin: 10px;
+    }
+
+    #cm__headings p {
+        font-size: 30px;
+    }
+    
     .form-container{
         background-color: #F4F1F2;
         border-radius: .2em;
         padding: 8px;
         margin: 20px auto;
     }
-    
-    .contactme__form{
-        margin: 10px;
-    }
-    
+
     .form__input{
         width: 100%;
         margin: 8px auto;
@@ -811,6 +978,28 @@ h1{
     .footer__info{
         justify-content: space-around;
     }
+
+    .modal__content{
+        width: 100%;
+        max-width: 900px;
+        max-height: none;
+        height: 600px;
+        padding: 10px;
+        background-color: #F4F1F2;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        position: absolute;
+    }
+
+    .video-item-a iframe{
+        width: 800px;
+        height: 450px;
+        max-width: none;
+        max-height: none;
+    }
 }
 
 
@@ -825,7 +1014,7 @@ h1{
     }
 }
 
-@media screen and (max-width: 1103px){
+@media screen and (max-width: 1400px){
     .title{
         font-size: 7.5vw;
     }
