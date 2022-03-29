@@ -289,7 +289,7 @@ h1{
 }
 
 .fa-times:hover{
-    color: var(--color-hover-nav-menu);
+    color: var(--color-secondary);
 }
 
 .mostrar{
@@ -330,7 +330,7 @@ h1{
 }
 
 .nav__li a:hover{
-    color: var(--color-hover-nav-menu);
+    color: var(--color-secondary);
 }
 
 .content__main{
@@ -682,11 +682,12 @@ h1{
     z-index: 5000;
     transform: translateY(-200%);
     transition: all .5s;
+    position: relative;
 }
 
 .modal__content{
     width: 96vw;
-    height: 80vw;
+    height: 70vw;
     max-width: 600px;
     max-height: 400px;
     padding: 10px;
@@ -708,6 +709,21 @@ h1{
 
 .modal__content p{
     color: var(--color-dominated);
+    font-family: var(--main-font);
+    text-align: center;
+}
+
+.modal-description{
+    background-color:var(--color-secondary);
+    width: 100%;
+    top: 98%;
+    height: 100px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
 }
 
 .btn-close{
@@ -983,7 +999,7 @@ h1{
         width: 100%;
         max-width: 900px;
         max-height: none;
-        height: 600px;
+        height: 550px;
         padding: 10px;
         background-color: #F4F1F2;
         border-radius: 4px;
@@ -993,12 +1009,23 @@ h1{
         justify-content: space-evenly;
         position: absolute;
     }
+    
+    .modal__content p{
+        font-size: 30px;
+    }
 
     .video-item-a iframe{
         width: 800px;
         height: 450px;
         max-width: none;
         max-height: none;
+    }
+}
+
+@media screen and (max-width: 660px){
+    .parallax{
+        background-size: 1240px 1000px;
+        background-position:right top;
     }
 }
 
@@ -1011,6 +1038,22 @@ h1{
 
     .softwares{
         font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 360px){
+    .logo-tassara{
+        font-size: 15px;
+    }
+
+    .footer__info{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-height: 480px){
+    .button-container{
+        top: 70%;
     }
 }
 
