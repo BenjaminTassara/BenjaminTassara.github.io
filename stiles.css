@@ -99,7 +99,7 @@ h1{
 .softwares ul{
     list-style: none;
     animation: change-softwares 7s infinite;
-    padding: 0 10px;
+    padding: 0 8px;
     font-size: 5vw;
 }
 
@@ -117,9 +117,9 @@ h1{
 }
 
 .play{
-    width: 100px;
-    height: 70px;
-    font-size: 30px;
+    width: 80px;
+    height: 50px;
+    font-size: 25px;
     text-align: center;
     background-color: #000;
     display: flex;
@@ -141,10 +141,10 @@ h1{
 }
 
 .parallax__button{
-    width: 170px;
-    height: 70px;
+    width: 150px;
+    height: 50px;
     background-color: var(--color-secondary);
-    font-size: 30px;
+    font-size: 25px;
     padding: 14px 20px;
     cursor: pointer;
     text-align: center;
@@ -448,7 +448,6 @@ h1{
 }
 
 .portfolio__container-video .video-item{
-    height: 14rem;
     width: 25rem;
     margin: .5rem 0;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
@@ -459,14 +458,15 @@ h1{
 .portfolio__container-video .video-item img{
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     outline: none;
     border: none;
+    display: block;
 }
 
-.portfolio__container-video .video-item img:hover{
+.portfolio__container-video .video-item:hover{
     transition: .2s linear;
-    transform: scale(1.1);
+    transform: scale(1.05);
     
 }
 
