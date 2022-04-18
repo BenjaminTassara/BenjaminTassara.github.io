@@ -1,6 +1,6 @@
 *{
     /*font-family: 'Source Sans Pro', sans-serif;*/
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Sora', sans-serif;
     color: #000;
 }
 
@@ -496,19 +496,30 @@ h1{
 
 .card-item{
     margin: 30px;
-    padding: 5px;
+    padding: 20px 0;
     width: 300px;
     height: 400px;
-    display: flex;
+    display: grid;
+    grid-template-rows: 66.5px 1fr 66.5px;
+    /*display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-around;*/
     border: 2px solid #262626;
     text-align: center;
 
     opacity: 0;
     transform: scale(0.9);
-    transition: .9s ease-in-out all;
+    transition: .9s ease-in-out transform, .3s ease-in-out box-shadow, .9s ease-in-out opacity;
+
+}
+
+.card-item:hover{
+    box-shadow: 0px 0px 0px 10px var(--color-secondary); 
+}
+
+.card-paragraph{
+    padding: 10px 20px 0px 20px;
 }
 
 .card-item.visible{
@@ -521,6 +532,7 @@ h1{
 }
 
 .card-heading{
+    grid-row: 1/2;
     text-align: center;
 }
 
@@ -532,6 +544,9 @@ h1{
 
 .experience-items{
     font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .experience-items i{
@@ -682,57 +697,47 @@ h1{
     z-index: 5000;
     transform: translateY(-200%);
     transition: all .5s;
-    position: relative;
 }
 
 .modal__content{
     width: 96vw;
     height: 70vw;
-    max-width: 600px;
+    max-width: 650px;
     max-height: 400px;
-    padding: 10px;
     background-color: #F4F1F2;
-    border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    position: absolute;
 }
 
 .video-item-a iframe{
-    width: 90vw;
+    width: 80vw;
     height: 50vw;
     max-width: 550px;
     max-height: 300px;
+    display: block;
 }
 
 .modal__content p{
     color: var(--color-dominated);
     font-family: var(--main-font);
     text-align: center;
-}
-
-.modal-description{
-    background-color:var(--color-secondary);
-    width: 100%;
-    top: 98%;
-    height: 100px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom-left-radius:4px;
-    border-bottom-right-radius:4px;
+    margin: 8px 0;
+    font-size: 17px;
 }
 
 .btn-close{
     display: flex;
+    margin-left: auto;
+    align-items: center;
+    padding: 5px;
 }
 
 .btn-close i{
     color: #262626;
     font-size: 20px;
+    height: 100%;
     padding: inherit;
 }
 
@@ -801,7 +806,7 @@ h1{
     }
 
     .softwares, .softwares p{
-        font-size: 38px;
+        font-size: 37px;
         margin-bottom: 50px;
     }
 
@@ -863,9 +868,10 @@ h1{
     }
     
     .aboutme__content-description p{
-        margin: 10px 0;
+        margin-bottom: 30px ;
         width: 100%;
         font-size: 27px;
+        line-height: 36px;
     }
 
 
@@ -913,6 +919,8 @@ h1{
     }
 */
 
+    
+
     .main__portfolio{
         padding: inherit;
         padding: var(--paddng-sections-responsive);
@@ -935,6 +943,7 @@ h1{
 
     .card-item{
         width: 300px;
+        height: 440px;
     }
 
     .main__contactme{
@@ -999,15 +1008,42 @@ h1{
         width: 100%;
         max-width: 900px;
         max-height: none;
+        height: 570px
+    }
+
+    .video-item-a iframe{
+        width: 800px;
+        height: 450px;
+        max-width: none;
+        max-height: none;
+    }
+
+    .btn-close{
+        height: 61px;
+    }
+
+    .btn-close i{
+        height: 100%;
+    }
+
+    .modal__content p{
+        font-size: 30px;
+    }
+    
+    /*
+    .modal__content{
+        width: 100%;
+        max-width: 900px;
+        max-height: none;
         height: 550px;
-        padding: 10px;
-        background-color: #F4F1F2;
-        border-radius: 4px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        position: absolute;
+    }
+    .btn-close{
+        height: 60px;
+    }
+
+    .btn-close i{
+        margin: inherit;
+        height: 100%;
     }
     
     .modal__content p{
@@ -1019,7 +1055,7 @@ h1{
         height: 450px;
         max-width: none;
         max-height: none;
-    }
+    }*/
 }
 
 @media screen and (max-width: 660px){
